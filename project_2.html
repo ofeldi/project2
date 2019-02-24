@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
+
+
+
+    <style>
+        .parallax {
+            /* The image used */
+            background-image: url("https://www.postoffice.co.uk/dam/jcr:5ab3c5ee-95b4-4c72-bf16-10fc8173e521/Currency_%20Converter.jpg");
+
+            /* Set a specific height */
+            height: 500px;
+
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: darkblue;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        #myBtn:hover {
+            background-color: #555;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        .header {
+            background-color: lightgrey;
+            height: 100px;
+        }
+
+        .headerBox {
+            border-top: solid black 1px;
+            border-right: solid black 1px;
+            height: 21px;
+            display: block;
+        }
+
+        button {width:6em}
+        button, #opendtoggle:hover span {display:none}
+        button, #opendtoggle:hover:before {content:"Remove!"}
+
+        #wait{
+            display:none;
+            width:69px;height:89px;
+            position:absolute;
+            top:50%;
+            left:50%;
+            padding:2px;
+        }
+
+    </style>
+
+    <title>Title</title>
+
+</head>
+<body>
+
+<div id="wait"><img src='lg.colorful-progress-loader.gif' width="64" height="64" /><br>Loading..</div>
+
+
+<p>
+<div><img style="display: inline; position:relative; float:right ; border-bottom: black solid 2px;" src="capture.png">
+</div>
+<h4 class="header" style="padding-top:30px">Cryptonite</h4>
+
+<div class="headerBox"></div>
+</p>
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light" style="position:relative; display: block;">
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02" style="display: block" ;>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link scrolltop" href="#">Top Page <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Live Reports</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#"></a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+<div id="currency" style="margin-top:80px"></div>
+
+<div id="modaloutput"></div>
+
+<div id="fiveToggleModal"></div>
+
+<div id="toggeledCardsModal"></div>
+
+</body>
+
+<script src="project2_script.js"></script>
+
+
+</html>
+
